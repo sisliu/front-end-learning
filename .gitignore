@@ -1,1 +1,27 @@
+<<<<<<< HEAD
 node_modules
+=======
+.DS_Store
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+**/*.log
+
+tests/**/coverage/
+tests/e2e/reports
+selenium-debug.log
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.local
+
+package-lock.json
+yarn.lock
+>>>>>>> 41d842c4bb4558a4d5e40e7f7de2e177e4912308
