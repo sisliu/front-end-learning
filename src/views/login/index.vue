@@ -18,11 +18,11 @@
           name="username"
           type="text"
           tabindex="1"
-          autocomplete="on"
+          autocomplete="off"
         />
       </el-form-item>
 
-      <el-tooltip v-model="capsTooltip" content="Caps lock is On" placement="right" manual>
+      <el-tooltip v-model="capsTooltip" content="大写已经开启" placement="right" manual>
         <el-form-item prop="password">
           <span class="svg-container">
             <svg-icon icon-class="password" />
@@ -36,7 +36,7 @@
             placeholder="请输入密码"
             name="password"
             tabindex="2"
-            autocomplete="on"
+            autocomplete="off"
             @keyup.native="checkCapslock"
             @blur="capsTooltip = false"
             @keyup.enter.native="handleLogin"
@@ -59,7 +59,7 @@
           clearable
           tabindex="3"
           required
-          @keyup.enter.native="loginBtuClick('form')"
+          @keyup.enter.native="handleLogin('loginForm')"
         />
         <valid-code
           class="valid-code"
@@ -70,15 +70,17 @@
         <!-- <i class="el-icon-refresh-right i-refresh" /> -->
       </el-form-item>
       <el-form-item>
-        <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
-
+        <el-button :loading="loading" plain type="success" style="width:20%;margin-bottom:10px;margin-left:10px;margin-top:10px" @click.native.prevent="handleLogin">登录</el-button>
+        <el-button :loading="loading" plain type="success" style="width:auto;margin:10px 10px 10px 10px;float:right" @click.native.prevent="handleLogin">第三方登录</el-button>
+      </el-form-item>
+      <el-form-item>
         <div style="position:relative">
           <div class="tips">
-            <span>用户名 : admin</span>
+            <span>用户 : admin</span>
             <span>密码 : any</span>
           </div>
           <div class="tips">
-            <span style="margin-right:18px;">用户名 : editor</span>
+            <span style="margin-right:18px;">用户 : editor</span>
             <span>密码 : any</span>
           </div>
         </div>
@@ -242,7 +244,7 @@ export default {
 /* 修复input 背景不协调 和光标变色 */
 /* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
 
-$bg:#283443;
+$bg:#2eb7c8;
 $light_gray:#fff;
 $cursor: #fff;
 

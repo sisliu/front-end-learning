@@ -12,7 +12,7 @@ import '@/styles/index.scss' // global css
 import App from './App'
 import store from './store'
 import router from './router'
-
+import VueI18n from 'vue-i18n'
 import './icons' // icon
 import './permission' // permission control
 import './utils/error-log' // error log
@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium' // set element-ui default size
 })
-
+Vue.use(VueI18n)
 // register global utility filters
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
